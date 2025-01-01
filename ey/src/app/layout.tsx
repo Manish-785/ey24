@@ -29,11 +29,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
+        {/* <Navbar />
         <BlogCard image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" buttonText="Read More" description="There is a heightened interest in cloud — an 
 enabler for modern business
 priorities like AI, carbon emissions
-reduction and innovation."/>
+reduction and innovation."/> */}
         {children}
       </body>
     </html>
