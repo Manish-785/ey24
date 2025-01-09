@@ -6,7 +6,7 @@ interface BlogCardProps {
 
 function BlogCard({ description, image, buttonText }: BlogCardProps) {
   return (
-    <div className="relative flex flex-col my-6 max-w-[450px] w-[29.63%] min-w-[300px] h-[452.84px] min-h-[420px]">
+    <div className="relative flex flex-col max-w-[450px] w-[29.63%] min-w-[300px] h-[452.84px] min-h-[420px]">
       <div className="relative h-[45.4%] min-h-[206px] overflow-hidden text-white">
         <img
           src={image}
