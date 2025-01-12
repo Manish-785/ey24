@@ -1,0 +1,74 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: gray;
+}
+
+.addTransaction, .analytics, .transactionList, .summary {
+  margin-bottom: 20px;
+}
+
+.addTransaction input, .addTransaction select {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.addTransaction button {
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.addTransaction button:hover {
+  background-color: #005bb5;
+}
+
+.transactionList ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transactionList li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.transactionList li:last-child {
+  border-bottom: none;
+}
+
+.transactionList li:hover {
+  background-color: #f8f9fa;
+}
+
+.summary {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: black; /* Set font color to black */
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: black; /* Set font color to black */
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.summary p {
+  color: black; /* Set font color to black */
+}
