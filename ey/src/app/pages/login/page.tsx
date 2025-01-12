@@ -1,7 +1,21 @@
+'use client'
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { GlobeAltIcon } from "@heroicons/react/solid";
+import { useRouter } from 'next/navigation';
+
 function Login() {
+  const router = useRouter();
+  const handleLoginSuccess = (credentialResponse) => {
+    console.log("Google Login Success:", credentialResponse);
+    router.push('/pages/home');
+  };
+
+  const handleLoginError = () => {
+    console.error("Google Login Failed");
+  };
+
   return (
-    <>
+    <GoogleOAuthProvider clientId={"211333459059-263vqpj3tu5gmmkkqbdpgrhk1euku8ab.apps.googleusercontent.com"}>
       <div
         style={{
           backgroundAttachment: "fixed",
@@ -12,7 +26,11 @@ function Login() {
           height: "100vh",
           width: "100vw",
         }}
-      ><nav className="flex w-full h-[5.575rem] items-center text-[1.5rem] justify-end px-14"><GlobeAltIcon className="h-[1.55rem] w-[1.55rem]"/><span className="pl-4">English</span></nav>
+      >
+        <nav className="flex w-full h-[5.575rem] items-center text-[1.5rem] justify-end px-14">
+          <GlobeAltIcon className="h-[1.55rem] w-[1.55rem]" />
+          <span className="pl-4">English</span>
+        </nav>
         <div
           className="font-sans text-4xl text-center text-white sm:text-2xl md:text-3xl lg:text-5xl"
           style={{
@@ -43,28 +61,23 @@ function Login() {
         </div>
 
         <div>
-        <button
-  style={{
-    position: "absolute",
-    top: "63%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-  }}
-  className="bg-white text-black font-sans text-normal h-[55px] sm:w-full sm:max-w-full sm:text-base md:w-[20rem] md:text-lg lg:w-[26.5rem] lg:text-xl flex justify-center items-center hover:bg-gray-200 hover:shadow-md transition-all"
->
-  Continue with Google
-  <span className="ml-2">
-    <img
-      className="w-[20px]"
-      src="/assets/google.svg"
-      alt="Google logo"
-    />
-  </span>
-</button>
-
+          <div
+            style={{
+              position: "absolute",
+              top: "63%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <GoogleLogin
+              onSuccess={handleLoginSuccess}
+              onError={handleLoginError}
+              useOneTap
+            />
+          </div>
         </div>
       </div>
-    </>
+    </GoogleOAuthProvider>
   );
 }
 

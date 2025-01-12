@@ -13,7 +13,7 @@ export default function Navbar() {
           <Link href="/quiz" className="text-gray-300 hover:text-white" style={{ fontFamily: 'Roboto Condensed', fontWeight: 700, fontSize: '14px' }}>
             Quiz
           </Link>
-          <Link href="/courses" className="text-gray-300 hover:text-white" style={{ fontFamily: 'Roboto Condensed', fontWeight: 700, fontSize: '14px' }}>
+          <Link href="/pages/courses" className="text-gray-300 hover:text-white" style={{ fontFamily: 'Roboto Condensed', fontWeight: 700, fontSize: '14px' }}>
             Courses
           </Link>
           <Link href="/blogs" className="text-gray-300 hover:text-white" style={{ fontFamily: 'Roboto Condensed', fontWeight: 700, fontSize: '14px' }}>

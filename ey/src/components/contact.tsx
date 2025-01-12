@@ -1,4 +1,12 @@
+'use client'
+import { useRouter } from "next/navigation";
+
 function Contact() {
+  const router = useRouter();
+  const handleRedirect= ()=>{
+    console.log('clicked')
+    router.push('/pages/chat')
+  }
     return (
       <div className="w-full bg-[#2E2E38] h-fit flex flex-col items-center justify-center p-4">
         <h1 className="text-center text-[3.5rem] font-extralight text-[#FFE600]">
@@ -7,7 +15,7 @@ function Contact() {
         <p className="text-center text-[2rem] mb-4">
           Like what you’ve seen? Get in touch to learn more
         </p>
-        <button className="border border-white rounded-full w-fit p-4 flex items-center justify-center">
+        <button className="border border-white rounded-full w-fit p-4 flex items-center justify-center" onClick={() => console.log("clicked")}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
