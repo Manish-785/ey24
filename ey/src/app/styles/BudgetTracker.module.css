@@ -2,31 +2,52 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: gray;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.addTransaction, .analytics, .transactionList, .summary {
-  margin-bottom: 20px;
+.addTransaction, .analytics, .transactionList {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
 }
 
 .addTransaction input, .addTransaction select {
   display: block;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-bottom: 12px;
+  padding: 12px;
   width: 100%;
   box-sizing: border-box;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.addTransaction input:focus, .addTransaction select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .addTransaction button {
-  padding: 10px 20px;
-  background-color: #0070f3;
+  padding: 12px 24px;
+  background-color: #3b82f6;
   color: white;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  width: 100%;
 }
 
 .addTransaction button:hover {
-  background-color: #005bb5;
+  background-color: #2563eb;
 }
 
 .transactionList ul {
@@ -35,8 +56,23 @@
 }
 
 .transactionList li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+  padding: 14px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #1a202c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.transactionList li span[data-type="income"] {
+  color: #059669;
+  font-weight: 600;
+}
+
+.transactionList li span[data-type="expense"] {
+  color: #dc2626;
+  font-weight: 600;
 }
 
 .transactionList li:last-child {
@@ -44,31 +80,87 @@
 }
 
 .transactionList li:hover {
-  background-color: #f8f9fa;
+  background-color: #f8fafc;
 }
 
 .summary {
   background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-  color: black; /* Set font color to black */
+  color: #1a202c;
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
+  margin-bottom: 24px;
+  font-size: 32px;
   font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
-  color: black; /* Set font color to black */
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
+  color: #334155;
+  margin-bottom: 16px;
+  font-size: 20px;
   font-weight: 600;
 }
 
 .summary p {
-  color: black; /* Set font color to black */
+  color: #334155;
+  font-size: 16px;
+  margin: 8px 0;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.summary p:last-child {
+  border-bottom: none;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+/* Add styles for the chart container */
+.analytics {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+  }
+  
+  .addTransaction, .analytics, .transactionList, .summary {
+    padding: 16px;
+  }
+}
+
+/* Optional: Add a subtle animation for new transactions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.transactionList li {
+  animation: fadeIn 0.3s ease;
 }
